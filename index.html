@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B e l a j a r</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/vue@next" defer></script>
+  <script src="app.js" defer></script>
+  <style>
+    /* Add any additional styles here */
+    /* For the image styling */
+    section img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border: 5px solid #e0e0e0; /* Soft border color */
+    }
+  </style>
+  <script>
+    // Generate a random color in hexadecimal format
+    function getRandomColor() {
+      return '#' + Math.floor(Math.random() * 16777215).toString(16);
+    }
+
+    // Apply random color to the input text
+    window.addEventListener('DOMContentLoaded', () => {
+      const inputText = document.querySelector('input[type="text"]');
+      inputText.style.color = getRandomColor();
+    });
+  </script>
+</head>
+<body>
+  <section id="tugas" v-cloak>
+    <h2>{{ nama }}</h2>
+    <input type="text" :value="tanggal_lahir">
+    <p>{{ 'telah bernafas selama ' + age }}</p>
+    <p>{{ futureAge + ', menuju tanggal kelahiran' }}</p>
+    <p>{{ kocok }}</p>
+    <div><img src="burungGambar.JPG" alt="Bird Image"></div>
+    <input type="text" :value="nama">
+  </section>
+</body>
+</html>
